@@ -1,0 +1,149 @@
+/* ベース */
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    sans-serif;
+  background: #fdfdfd;
+  color: #333;
+}
+
+/* ヘッダー */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: #f9c83d;
+  color: #222;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 14px;
+}
+
+.site-title {
+  font-weight: 700;
+  font-size: 1rem;
+}
+
+.menu-toggle {
+  font-size: 1.3rem;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+/* メインコンテンツ */
+.page {
+  max-width: 920px;
+  margin: 0 auto;
+  padding: 16px;
+}
+
+h1 {
+  font-size: 1.6rem;
+  margin-top: 8px;
+}
+
+h2 {
+  font-size: 1.2rem;
+  border-left: 5px solid #f9c83d;
+  padding-left: 8px;
+  margin-top: 20px;
+}
+
+/* カード */
+.day-card,
+.info-card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 14px 16px;
+  margin-top: 12px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+}
+
+.day-card h2,
+.info-card h2 {
+  border-left-color: #f9c83d;
+}
+
+.day-card ul,
+.info-card ul {
+  padding-left: 18px;
+}
+
+/* リンク */
+a {
+  color: #c08a00;
+  text-decoration: underline;
+}
+
+/* サイドメニュー */
+.side-menu {
+  position: fixed;
+  top: 0;
+  right: -260px;
+  width: 260px;
+  height: 100vh;
+  background: #ffffff;
+  box-shadow: -2px 0 12px rgba(0, 0, 0, 0.15);
+  padding: 12px 14px;
+  transition: right 0.25s ease;
+  z-index: 20;
+}
+
+.side-menu.open {
+  right: 0;
+}
+
+.menu-close {
+  background: transparent;
+  border: none;
+  font-size: 1.4rem;
+  float: right;
+  cursor: pointer;
+}
+
+.side-menu ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.side-menu li {
+  margin: 8px 0;
+}
+
+.side-menu a {
+  text-decoration: none;
+  color: #333;
+}
+
+.menu-section-title {
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin-top: 8px;
+}
+
+.lang-btn {
+  border: 1px solid #ddd;
+  border-radius: 999px;
+  padding: 3px 10px;
+  background: #fff;
+  font-size: 0.8rem;
+  cursor: pointer;
+}
+
+.menu-note {
+  font-size: 0.8rem;
+  color: #555;
+}
+
+/* スマホ */
+@media (max-width: 600px) {
+  .page {
+    padding: 12px;
+  }
+
+  h1 {
+    font-size: 1.3rem;
+  }
+}
