@@ -487,35 +487,30 @@ flowchart TD
 
                 <div class="diagram-container">
                     <div class="mermaid">
-flowchart LR
-    subgraph 事前準備
-        A1[サイト訪問] --> A2[言語選択]
-        A2 --> A3[Itinerary確認]
-        A3 --> A4[3日間の全体像把握]
-    end
+flowchart TD
+    A1[サイト訪問] --> A2[言語選択]
+    A2 --> A3[Itinerary確認]
+    A3 --> A4[3日間の全体像把握]
 
-    subgraph Day1-3ループ
-        B1[本日のスケジュール確認] --> B2[Street Walk Map]
-        B2 --> B3[訪問スポット選定]
-        B3 --> B4[Google Maps起動]
-        B4 --> B5[スポット訪問]
-        B5 --> B6[写真撮影]
-        B6 --> B7[SNS投稿]
-        B7 --> B8[Daily Missions確認]
-        B8 --> B9[日報フォーム提出]
-    end
+    A4 --> B1[本日のスケジュール確認]
+    B1 --> B2[Street Walk Map]
+    B2 --> B3[訪問スポット選定]
+    B3 --> B4[Google Maps起動]
+    B4 --> B5[スポット訪問]
+    B5 --> B6[写真撮影]
+    B6 --> B7[SNS投稿]
+    B7 --> B8[Daily Missions確認]
+    B8 --> B9[日報フォーム提出]
 
-    subgraph 最終日
-        C1[完了報告フォーム] --> C2[3日間の振り返り]
-        C2 --> C3[提出完了]
-    end
-
-    A4 --> B1
-    B9 --> B1
-    B9 --> C1
+    B9 --> DayCheck{3日目?}
+    DayCheck -->|いいえ| B1
+    DayCheck -->|はい| C1[完了報告フォーム]
+    C1 --> C2[3日間の振り返り]
+    C2 --> C3[提出完了]
 
     style A1 fill:#f9c83d
     style C3 fill:#4caf50
+    style DayCheck fill:#e3f2fd
                     </div>
                 </div>
             </div>
