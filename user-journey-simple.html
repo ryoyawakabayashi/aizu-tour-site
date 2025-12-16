@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>会津プレミアムツアー - ご利用の流れ</title>
+    <script type="module">
+        import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+        mermaid.initialize({
+            startOnLoad: true,
+            theme: 'default',
+            flowchart: {
+                curve: 'basis',
+                padding: 20
+            }
+        });
+    </script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans JP", sans-serif;
+            background: linear-gradient(135deg, #f9c83d 0%, #fff3cd 100%);
+            min-height: 100vh;
+            padding: 20px;
+            line-height: 1.8;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 24px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+            overflow: hidden;
+        }
+
+        header {
+            background: linear-gradient(135deg, #f9c83d 0%, #c08a00 100%);
+            padding: 50px 40px;
+            color: #333;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 2.8em;
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+
+        .subtitle {
+            font-size: 1.3em;
+            opacity: 0.85;
+        }
+
+        .intro {
+            padding: 40px;
+            text-align: center;
+            font-size: 1.1em;
+            color: #555;
+            background: #fffbf0;
+            border-bottom: 3px solid #f9c83d;
+        }
+
+        .intro p {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .content {
+            padding: 50px 40px;
+        }
+
+        .section-title {
+            font-size: 2em;
+            font-weight: 700;
+            color: #333;
+            text-align: center;
+            margin-bottom: 30px;
+            padding-bottom: 15px;
+            border-bottom: 3px solid #f9c83d;
+        }
+
+        .step-guide {
+            margin-bottom: 60px;
+        }
+
+        .steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .step-card {
+            background: linear-gradient(135deg, #fff 0%, #f8f9fa 100%);
+            padding: 30px;
+            border-radius: 16px;
+            border: 2px solid #e9ecef;
+            text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .step-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .step-number {
+            display: inline-block;
+            width: 60px;
+            height: 60px;
+            line-height: 60px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #f9c83d 0%, #c08a00 100%);
+            color: white;
+            font-size: 1.8em;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+
+        .step-title {
+            font-size: 1.4em;
+            font-weight: 700;
+            color: #333;
+            margin-bottom: 15px;
+        }
+
+        .step-description {
+            color: #666;
+            font-size: 1em;
+            line-height: 1.6;
+        }
+
+        .diagram-section {
+            margin-bottom: 60px;
+        }
+
+        .diagram-wrapper {
+            background: #f8f9fa;
+            padding: 30px;
+            border-radius: 16px;
+            border: 2px solid #e9ecef;
+        }
+
+        .mermaid {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 400px;
+        }
+
+        .daily-journey {
+            margin-bottom: 50px;
+        }
+
+        .day-header {
+            background: linear-gradient(135deg, #0b70d6 0%, #0056b3 100%);
+            color: white;
+            padding: 20px 30px;
+            border-radius: 12px 12px 0 0;
+            font-size: 1.5em;
+            font-weight: 700;
+        }
+
+        .day-content {
+            background: #f8f9fa;
+            padding: 30px;
+            border-radius: 0 0 12px 12px;
+            border: 2px solid #e9ecef;
+            border-top: none;
+        }
+
+        .tips {
+            background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%);
+            padding: 30px;
+            border-radius: 16px;
+            margin-top: 40px;
+            border-left: 5px solid #0b70d6;
+        }
+
+        .tips-title {
+            font-size: 1.4em;
+            font-weight: 700;
+            color: #0b70d6;
+            margin-bottom: 15px;
+        }
+
+        .tips-list {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .tips-list li {
+            padding: 10px 0;
+            padding-left: 30px;
+            position: relative;
+        }
+
+        .tips-list li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #0b70d6;
+            font-weight: 700;
+            font-size: 1.2em;
+        }
+
+        footer {
+            background: #333;
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+
+        @media screen and (max-width: 768px) {
+            h1 {
+                font-size: 2em;
+            }
+
+            .steps {
+                grid-template-columns: 1fr;
+            }
+
+            .content {
+                padding: 30px 20px;
+            }
+        }
+
+        @media print {
+            body {
+                background: white;
+                padding: 0;
+            }
+
+            .container {
+                box-shadow: none;
+            }
+
+            .step-card {
+                page-break-inside: avoid;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>会津プレミアムツアー</h1>
+            <p class="subtitle">ウェブサイトご利用の流れ</p>
+        </header>
+
+        <div class="intro">
+            <p>
+                このウェブサイトは、3日間の会津プレミアムツアーをより楽しんでいただくためのガイドです。<br>
+                行程表、おすすめスポット、毎日のミッションなど、ツアーに必要な情報をすべてご確認いただけます。
+            </p>
+        </div>
+
+        <div class="content">
+            <!-- ステップガイド -->
+            <div class="step-guide">
+                <h2 class="section-title">📱 ウェブサイトの使い方（4ステップ）</h2>
+
+                <div class="steps">
+                    <div class="step-card">
+                        <div class="step-number">1</div>
+                        <div class="step-title">言語を選択</div>
+                        <div class="step-description">
+                            ページ右上の言語セレクトから、日本語・英語・中文のお好きな言語を選択できます。
+                        </div>
+                    </div>
+
+                    <div class="step-card">
+                        <div class="step-number">2</div>
+                        <div class="step-title">行程表を確認</div>
+                        <div class="step-description">
+                            「Itinerary（行程表）」で3���間のスケジュールを確認。出発時刻や訪問先をチェックしましょう。
+                        </div>
+                    </div>
+
+                    <div class="step-card">
+                        <div class="step-number">3</div>
+                        <div class="step-title">スポットを探す</div>
+                        <div class="step-description">
+                            「Street Walk Map（街ブラ）」で自由時間に訪れたい観光スポットやお店を探せます。Google Mapsにも連携！
+                        </div>
+                    </div>
+
+                    <div class="step-card">
+                        <div class="step-number">4</div>
+                        <div class="step-title">ミッション完了</div>
+                        <div class="step-description">
+                            「Daily Missions」で毎日のミッションを確認。SNS投稿や日報提出をして、思い出を記録しましょう。
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- サイト全体の流れ -->
+            <div class="diagram-section">
+                <h2 class="section-title">🗺️ サイトの全体像</h2>
+                <div class="diagram-wrapper">
+                    <div class="mermaid">
+flowchart TD
+    Start([ウェブサイト訪問]) --> Lang{言語選択<br/>日本語/English/中文}
+    Lang --> Menu[メニュー]
+
+    Menu --> Page1[📅 Itinerary<br/>行程表]
+    Menu --> Page2[🗺️ Street Walk Map<br/>街ブラマップ]
+    Menu --> Page3[✅ Daily Missions<br/>ミッション]
+
+    Page1 --> Action1[3日間の<br/>スケジュール確認]
+    Page2 --> Action2[スポット探索<br/>Google Maps連携]
+    Page3 --> Action3[ミッション確認<br/>日報・報告提出]
+
+    Action1 --> Enjoy[会津を楽しむ!]
+    Action2 --> Enjoy
+    Action3 --> Enjoy
+
+    style Start fill:#f9c83d,stroke:#c08a00,stroke-width:3px
+    style Enjoy fill:#4caf50,stroke:#2e7d32,stroke-width:3px,color:#fff
+    style Page1 fill:#e3f2fd,stroke:#0b70d6,stroke-width:2px
+    style Page2 fill:#e3f2fd,stroke:#0b70d6,stroke-width:2px
+    style Page3 fill:#e3f2fd,stroke:#0b70d6,stroke-width:2px
+                    </div>
+                </div>
+            </div>
+
+            <!-- 3日間の流れ -->
+            <h2 class="section-title">📆 3日間の旅の流れ</h2>
+
+            <div class="daily-journey">
+                <div class="day-header">Day 1 (1/15木) - 東京から会津へ</div>
+                <div class="day-content">
+                    <div class="mermaid">
+journey
+    title Day 1 - 東京から会津温泉へ
+    section 出発
+        ウェブサイトで行程確認: 5: 参加者
+    section 移動
+        東京→郡山→会津若松: 3: 参加者
+        東山温泉到着: 4: 参加者
+    section 自由時間
+        街ブラマップで周辺探索: 4: 参加者
+    section ミッション
+        SNS投稿: 4: 参加者
+        日報提出: 3: 参加者
+                    </div>
+                </div>
+            </div>
+
+            <div class="daily-journey">
+                <div class="day-header">Day 2 (1/16金) - 会津エリア周遊</div>
+                <div class="day-content">
+                    <div class="mermaid">
+journey
+    title Day 2 - 会津の魅力を満喫
+    section 朝
+        本日の予定確認: 5: 参加者
+    section 観光
+        会津エリア周遊: 5: 参加者
+        街ブラでスポット探索: 5: 参加者
+        鶴ヶ城訪問・写真撮影: 5: 参加者
+    section ミッション
+        SNS投稿: 4: 参加者
+    section 夕方
+        芦ノ牧温泉到着: 5: 参加者
+        日報提出: 3: 参加者
+                    </div>
+                </div>
+            </div>
+
+            <div class="daily-journey">
+                <div class="day-header">Day 3 (1/17土) - 最終日・帰京</div>
+                <div class="day-content">
+                    <div class="mermaid">
+journey
+    title Day 3 - 雪と伝統の街・大内宿
+    section 朝
+        最終日の予定確認: 5: 参加者
+    section アクティビティ
+        スノーパーク体験: 5: 参加者
+        大内宿訪問: 5: 参加者
+        思い出の写真撮影: 5: 参加者
+    section ミッション
+        SNS投稿: 4: 参加者
+    section 帰路
+        帰京: 3: 参加者
+        完了報告提出: 4: 参加者
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tips -->
+            <div class="tips">
+                <div class="tips-title">💡 ご利用のヒント</div>
+                <ul class="tips-list">
+                    <li><strong>行程表（Itinerary）</strong>：集合時刻や移動スケジュールを事前に確認しておくと安心です</li>
+                    <li><strong>街ブラマップ（Street Walk Map）</strong>：気になるスポットをタップすると、Google Mapsで位置を確認できます</li>
+                    <li><strong>デイリーミッション（Daily Missions）</strong>：毎日SNS投稿と日報提出があります。忘れずに！</li>
+                    <li><strong>完了報告</strong>：3日目の最後に、ツアー全体の完了報告フォームがあります</li>
+                    <li><strong>多言語対応</strong>：右上の言語セレクトで、いつでも言語を切り替えられます</li>
+                </ul>
+            </div>
+        </div>
+
+        <footer>
+            <p>会津プレミアムツアーで、素敵な思い出を作ってください！</p>
+            <p style="margin-top: 10px; opacity: 0.7;">Enjoy your journey in Aizu ✨</p>
+        </footer>
+    </div>
+</body>
+</html>

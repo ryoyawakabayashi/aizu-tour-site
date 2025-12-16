@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aizu Premium Tour - ユーザージャーニーマップ</title>
+    <script type="module">
+        import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+        mermaid.initialize({
+            startOnLoad: true,
+            theme: 'default',
+            flowchart: {
+                curve: 'basis',
+                padding: 20
+            }
+        });
+    </script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1920px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 16px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            overflow: hidden;
+        }
+
+        header {
+            background: linear-gradient(135deg, #f9c83d 0%, #c08a00 100%);
+            padding: 30px 40px;
+            color: #333;
+        }
+
+        h1 {
+            font-size: 2.5em;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            font-size: 1.1em;
+            opacity: 0.8;
+        }
+
+        .content {
+            padding: 40px;
+        }
+
+        .diagram-section {
+            margin-bottom: 60px;
+            aspect-ratio: 16 / 9;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 12px;
+            border: 2px solid #e9ecef;
+        }
+
+        .diagram-section h2 {
+            font-size: 1.8em;
+            margin-bottom: 20px;
+            color: #333;
+            text-align: center;
+        }
+
+        .diagram-section:last-child {
+            margin-bottom: 0;
+        }
+
+        .mermaid {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex: 1;
+        }
+
+        @media print {
+            body {
+                background: white;
+                padding: 0;
+            }
+
+            .container {
+                box-shadow: none;
+            }
+
+            .diagram-section {
+                page-break-after: always;
+                aspect-ratio: 16 / 9;
+            }
+
+            .diagram-section:last-child {
+                page-break-after: auto;
+            }
+        }
+
+        @media screen and (max-width: 1200px) {
+            .diagram-section {
+                aspect-ratio: auto;
+                min-height: 600px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Aizu Premium Tour</h1>
+            <p class="subtitle">ユーザージャーニーマップ</p>
+        </header>
+
+        <div class="content">
+            <div class="diagram-section">
+                <h2>ページ遷移フロー</h2>
+                <div class="mermaid">
+flowchart TD
+    Start([サイト訪問]) --> LangSelect{言語選択}
+    LangSelect -->|日本語| IndexJA[Itinerary<br/>行程表]
+    LangSelect -->|English| IndexEN[Itinerary EN]
+    LangSelect -->|中文| IndexZH[Itinerary ZH]
+
+    IndexJA --> Menu{メニュー選択}
+    IndexEN --> Menu
+    IndexZH --> Menu
+
+    Menu -->|行程表| Index[Itinerary<br/>3日間のスケジュール確認]
+    Menu -->|街ブラ| StreetWalk[Street Walk Map<br/>スポット探索]
+    Menu -->|ミッション| Missions[Daily Missions<br/>ミッション確認]
+
+    Index --> CheckSchedule[Day 1-3の<br/>スケジュール確認]
+    CheckSchedule --> Menu
+
+    StreetWalk --> SearchSpot[スポット検索]
+    SearchSpot --> OpenMaps[Google Maps起動]
+    OpenMaps --> Visit[スポット訪問]
+    Visit --> TakePhoto[写真撮影]
+    TakePhoto --> Menu
+
+    Missions --> CheckMission[本日のミッション確認]
+    CheckMission --> SNSPost[SNS投稿]
+    SNSPost --> DailyReport[日報作成]
+    DailyReport --> SubmitForm[Google Forms提出]
+    SubmitForm --> Complete[完了報告提出]
+    Complete --> Menu
+
+    style Start fill:#f9c83d
+    style Complete fill:#4caf50
+    style OpenMaps fill:#0b70d6,color:#fff
+    style SubmitForm fill:#0b70d6,color:#fff
+                </div>
+            </div>
+
+            <div class="diagram-section">
+                <h2>Day 1 (1/15) - ユーザージャーニー</h2>
+                <div class="mermaid">
+journey
+    title Day 1 - 東京から会津へ
+    section 出発
+        サイト訪問: 5: 参加者
+        行程表で本日のスケジュール確認: 5: 参加者
+    section 移動
+        東京→郡山→会津若松: 3: 参加者
+        東山温泉到着: 4: 参加者
+    section 自由時間
+        街ブラマップで周辺スポット確認: 4: 参加者
+    section ミッション
+        SNS投稿: 4: 参加者
+        日報提出: 3: 参加者
+                </div>
+            </div>
+
+            <div class="diagram-section">
+                <h2>Day 2 (1/16) - ユーザージャーニー</h2>
+                <div class="mermaid">
+journey
+    title Day 2 - 会津エリア周遊
+    section 朝
+        行程表確認: 5: 参加者
+    section 観光
+        会津エリア周遊: 5: 参加者
+        街ブラでスポット探索: 5: 参加者
+        Google Mapsで位置確認: 4: 参加者
+        鶴ヶ城訪問・写真撮影: 5: 参加者
+    section ミッション
+        SNS投稿: 4: 参加者
+    section 夕方
+        芦ノ牧温泉到着: 5: 参加者
+        日報提出: 3: 参加者
+                </div>
+            </div>
+
+            <div class="diagram-section">
+                <h2>Day 3 (1/17) - ユーザージャーニー</h2>
+                <div class="mermaid">
+journey
+    title Day 3 - 最終日・帰京
+    section 朝
+        行程表確認: 5: 参加者
+    section アクティビティ
+        スノーパーク体験: 5: 参加者
+        大内宿訪問: 5: 参加者
+        写真撮影: 5: 参加者
+    section ミッション
+        SNS投稿: 4: 参加者
+    section 帰路
+        帰京: 3: 参加者
+        完了報告提出: 4: 参加者
+                </div>
+            </div>
+
+            <div class="diagram-section">
+                <h2>詳細ユーザージャーニーフロー</h2>
+                <div class="mermaid">
+flowchart LR
+    subgraph 事前準備
+        A1[サイト訪問] --> A2[言語選択]
+        A2 --> A3[Itinerary確認]
+        A3 --> A4[3日間の全体像把握]
+    end
+
+    subgraph Day1-3ループ
+        B1[本日のスケジュール確認] --> B2[Street Walk Map]
+        B2 --> B3[訪問スポット選定]
+        B3 --> B4[Google Maps起動]
+        B4 --> B5[スポット訪問]
+        B5 --> B6[写真撮影]
+        B6 --> B7[SNS投稿]
+        B7 --> B8[Daily Missions確認]
+        B8 --> B9[日報フォーム提出]
+    end
+
+    subgraph 最終日
+        C1[完了報告フォーム] --> C2[3日間の振り返り]
+        C2 --> C3[提出完了]
+    end
+
+    A4 --> B1
+    B9 --> B1
+    B9 --> C1
+
+    style A1 fill:#f9c83d
+    style C3 fill:#4caf50
+                </div>
+            </div>
+
+            <div class="diagram-section">
+                <h2>主要タッチポイント</h2>
+                <div class="mermaid">
+graph TD
+    subgraph ウェブサイト
+        P1[Itinerary<br/>行程表]
+        P2[Street Walk Map<br/>街ブラ]
+        P3[Daily Missions<br/>ミッション]
+    end
+
+    subgraph 外部サービス
+        E1[Google Maps<br/>位置情報]
+        E2[Google Forms<br/>日報]
+        E3[Google Forms<br/>完了報告]
+        E4[SNS<br/>Instagram/X]
+    end
+
+    P1 -.スケジュール確認.-> P2
+    P2 -.スポット探索.-> E1
+    E1 -.訪問完了.-> E4
+    E4 -.投稿完了.-> P3
+    P3 -.日報作成.-> E2
+    P3 -.最終報告.-> E3
+
+    style P1 fill:#fff,stroke:#f9c83d,stroke-width:3px
+    style P2 fill:#fff,stroke:#f9c83d,stroke-width:3px
+    style P3 fill:#fff,stroke:#f9c83d,stroke-width:3px
+    style E1 fill:#e3f2fd
+    style E2 fill:#e3f2fd
+    style E3 fill:#e3f2fd
+    style E4 fill:#fce4ec
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
