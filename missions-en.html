@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Aizu Premium Tour – Daily Missions (EN)</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body data-page="missions">
+  <header class="site-header">
+    <div class="site-title">Aizu Premium Tour</div>
+    <select id="langSelect" class="lang-select" aria-label="Select language">
+      <option value="ja">日本語</option>
+      <option value="en">English</option>
+      <option value="zh">中文</option>
+    </select>
+    <button class="menu-toggle" aria-label="Open menu">☰</button>
+  </header>
+
+  <nav class="side-menu" id="sideMenu">
+    <button class="menu-close" id="menuClose">×</button>
+    <ul>
+      <li><a href="index-en.html">Itinerary</a></li>
+      <li><a href="streetwalk-en.html">Street Walk Map</a></li>
+      <li><a href="missions-en.html">Daily Missions</a></li>
+    </ul>
+  </nav>
+
+  <main class="page">
+    <h1>Daily Missions</h1>
+    <p>
+      This page lists all required tasks for participants during and after the trip.
+    </p>
+
+    <!-- 1. Best Photo -->
+    <section class="info-card">
+      <h2><img src="camera-icon.svg" class="mission-icon" alt=""> 1. Best Photo Submission</h2>
+      <p>
+        Each day, select your best shot of the day and submit it.<br>
+        Submit here: <a href="https://docs.google.com/forms/d/e/1FAIpQLSf62pWpaNALNyyPZhNl31732vBWCXS1M3UgKkkszP8zmLuW7w/viewform?usp=dialog" target="_blank" rel="noopener">Submission Form</a>
+      </p>
+    </section>
+
+    <!-- 2. Social Media Post -->
+    <section class="info-card">
+      <h2><img src="sns-icon.svg" class="mission-icon" alt=""> 2. Social Media Posting</h2>
+      <p>Post about your trip on social media once per day.</p>
+      <h3>Rules</h3>
+      <ul>
+        <li>At least one post per day</li>
+        <li>Stories and disappearing content are NOT allowed (feed posts only)</li>
+        <li>Do not photograph other people's faces without permission</li>
+      </ul>
+    </section>
+
+    <!-- Required Hashtags -->
+    <section class="info-card">
+      <h2>Required Hashtags</h2>
+      <div class="hashtag-box">
+        <p class="hashtag-list" id="hashtags-en">#sponsored #aizuwakamatsu #fukushima #japantrip #japanlife</p>
+        <button class="copy-btn" onclick="copyHashtags('hashtags-en', this)" aria-label="Copy">
+          <img src="copy-icon.svg" class="copy-icon" alt="">
+        </button>
+      </div>
+    </section>
+
+    <!-- 3. Post-Trip Survey -->
+    <section class="info-card">
+      <h2><img src="survey-icon.svg" class="mission-icon" alt=""> 3. Post-Trip Survey</h2>
+      <p>
+        Please complete the survey on the Shinkansen ride home.<br>
+        <strong>Deadline: January 17 (Sat), 2026</strong><br>
+        Submit here: <a href="https://forms.gle/667itDydZ7GrsCQW8" target="_blank" rel="noopener">Survey Form</a>
+      </p>
+      <div class="callout-warning">
+        <strong>Payment Information</strong><br>
+        You will also register your bank account details for payment in this form.
+      </div>
+    </section>
+
+    <!-- 4. Completion Report -->
+    <section class="info-card">
+      <h2><img src="report-icon.svg" class="mission-icon" alt=""> 4. Completion Report</h2>
+      <p>
+        Submit your completion report for YOLO DISCOVER.<br>
+        <strong>Deadline: January 21 (Wed), 2026</strong><br>
+        Submit here: <a href="https://wom.yolo-japan.com/ja/mypage/active-projects/" target="_blank" rel="noopener">Active Projects</a>
+      </p>
+      <div class="callout-warning">
+        <strong>Tip</strong><br>
+        You can reuse photos from your daily social media posts or create a compilation post.
+      </div>
+    </section>
+
+    <hr style="margin: 24px 0; border: none; border-top: 1px solid #e6ecf0;">
+
+    <h2 style="border-left-color: #f9c83d;">Daily ToDo Checklist</h2>
+
+    <!-- Day 1 -->
+    <section class="day-card">
+      <h2>Day 1 | Jan 15 (Thu)</h2>
+      <ul class="todo-list">
+        <li><img src="camera-icon.svg" class="todo-icon" alt=""> Best Photo Submission</li>
+        <li><img src="sns-icon.svg" class="todo-icon" alt=""> Social Media Post</li>
+      </ul>
+    </section>
+
+    <!-- Day 2 -->
+    <section class="day-card">
+      <h2>Day 2 | Jan 16 (Fri)</h2>
+      <ul class="todo-list">
+        <li><img src="camera-icon.svg" class="todo-icon" alt=""> Best Photo Submission</li>
+        <li><img src="sns-icon.svg" class="todo-icon" alt=""> Social Media Post</li>
+      </ul>
+    </section>
+
+    <!-- Day 3 -->
+    <section class="day-card">
+      <h2>Day 3 | Jan 17 (Sat)</h2>
+      <ul class="todo-list">
+        <li><img src="camera-icon.svg" class="todo-icon" alt=""> Best Photo Submission</li>
+        <li><img src="sns-icon.svg" class="todo-icon" alt=""> Social Media Post</li>
+        <li><img src="survey-icon.svg" class="todo-icon" alt=""> Post-Trip Survey</li>
+      </ul>
+    </section>
+
+    <!-- After Trip -->
+    <section class="day-card">
+      <h2>After the Trip</h2>
+      <ul class="todo-list">
+        <li><img src="report-icon.svg" class="todo-icon" alt=""> YOLO DISCOVER Completion Report</li>
+      </ul>
+      <div class="callout-warning">
+        <strong>Deadline: January 21 (Wed), 2026</strong>
+      </div>
+    </section>
+
+    <!-- Emergency Contacts -->
+    <section class="emergency-contacts">
+      <h2>Emergency Contacts</h2>
+
+      <div class="emergency-section">
+        <h3>Police Boxes (Aizu-Wakamatsu Area)</h3>
+        <ul>
+          <li>Ekimae Koban (Aizu-Wakamatsu Sta.): <a href="tel:0242-22-1877"><img src="phone-icon.svg" class="phone-icon" alt="">0242-22-1877</a> <a href="https://www.google.com/maps/search/?api=1&query=会津若松駅前交番" target="_blank" rel="noopener"><img src="map-pin-icon.svg" class="map-icon" alt="">Map</a></li>
+          <li>Shiromae Koban (Higashiyama Onsen): <a href="tel:0242-27-0796"><img src="phone-icon.svg" class="phone-icon" alt="">0242-27-0796</a> <a href="https://www.google.com/maps/search/?api=1&query=城前交番+会津若松" target="_blank" rel="noopener"><img src="map-pin-icon.svg" class="map-icon" alt="">Map</a></li>
+          <li>Ooto Substation (Ashinomaki Onsen): <a href="tel:0242-92-2110"><img src="phone-icon.svg" class="phone-icon" alt="">0242-92-2110</a> <a href="https://www.google.com/maps/search/?api=1&query=大戸駐在所+会津若松" target="_blank" rel="noopener"><img src="map-pin-icon.svg" class="map-icon" alt="">Map</a></li>
+        </ul>
+      </div>
+
+      <div class="emergency-section">
+        <h3>Hospitals</h3>
+        <ul>
+          <li>Aizu Central Hospital: <a href="tel:0242-25-1515"><img src="phone-icon.svg" class="phone-icon" alt="">0242-25-1515</a> <a href="https://www.google.com/maps/search/?api=1&query=会津中央病院" target="_blank" rel="noopener"><img src="map-pin-icon.svg" class="map-icon" alt="">Map</a></li>
+          <li>Aizu Medical Center: <a href="tel:0242-75-2100"><img src="phone-icon.svg" class="phone-icon" alt="">0242-75-2100</a> <a href="https://www.google.com/maps/search/?api=1&query=福島県立医科大学会津医療センター" target="_blank" rel="noopener"><img src="map-pin-icon.svg" class="map-icon" alt="">Map</a></li>
+          <li>Night Emergency Center: <a href="tel:0242-28-1199"><img src="phone-icon.svg" class="phone-icon" alt="">0242-28-1199</a> <a href="https://www.google.com/maps/search/?api=1&query=会津若松市夜間急病センター" target="_blank" rel="noopener"><img src="map-pin-icon.svg" class="map-icon" alt="">Map</a></li>
+        </ul>
+      </div>
+
+      <div class="emergency-section">
+        <h3>Contact Persons</h3>
+        <ul>
+          <li>YOLO JAPAN Kamada: <a href="tel:080-3099-4493"><img src="phone-icon.svg" class="phone-icon" alt="">080-3099-4493</a></li>
+        </ul>
+      </div>
+    </section>
+
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

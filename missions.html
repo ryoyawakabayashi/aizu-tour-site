@@ -6,9 +6,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body data-page="missions">
   <header class="site-header">
     <div class="site-title">Aizu Premium Tour</div>
+    <select id="langSelect" class="lang-select" aria-label="Select language">
+      <option value="ja">日本語</option>
+      <option value="en">English</option>
+      <option value="zh">中文</option>
+    </select>
     <button class="menu-toggle" aria-label="Open menu">☰</button>
   </header>
 
@@ -19,59 +24,147 @@
       <li><a href="streetwalk.html">Street Walk Map（街ブラ）</a></li>
       <li><a href="missions.html">Daily Missions（ToDo）</a></li>
     </ul>
-    <hr>
-    <div class="menu-section-title">Language</div>
-    <ul>
-      <li><button class="lang-btn" data-lang="ja">日本語</button></li>
-      <li><button class="lang-btn" data-lang="en">English</button></li>
-      <li><button class="lang-btn" data-lang="zh">中文</button></li>
-    </ul>
-    <hr>
-    <div class="menu-section-title">Report</div>
-    <p class="menu-note">
-      完了報告は YOLO DISCOVER とは別の専用フォームから行ってください。<br>
-      （リンクは後で追加）
-    </p>
   </nav>
 
   <main class="page">
     <h1>Daily Mission（毎日のミッション）</h1>
     <p>
-      このページには、参加者のみなさんに毎日行っていただく必須タスクをまとめています。<br>
-      完了報告は YOLO DISCOVER とは別の専用フォームで提出します。
+      このページには、参加者のみなさんに行っていただく必須タスクをまとめています。
     </p>
 
-    <section class="day-card">
-      <h2>Day 1｜2026年1月15日（金）</h2>
-      <ul>
-        <li>SNSに今日の写真を投稿する（1日1回）</li>
-        <li>完了報告を書く（今日行った場所の写真＋ひとこと感想）</li>
-      </ul>
-    </section>
-
-    <section class="day-card">
-      <h2>Day 2｜2026年1月16日（土）</h2>
-      <ul>
-        <li>SNSに今日の写真を投稿する（1日1回）</li>
-        <li>完了報告を書く（訪れた場所の写真＋感想）</li>
-      </ul>
-    </section>
-
-    <section class="day-card">
-      <h2>Day 3｜2026年1月17日（日）</h2>
-      <ul>
-        <li>SNSに今日の写真を投稿する（旅のまとめ投稿でもOK）</li>
-        <li>完了報告を書く（最終日の訪問先の写真＋感想）</li>
-      </ul>
-    </section>
-
+    <!-- 1. とっておきの1枚 -->
     <section class="info-card">
-      <h2>完了報告フォーム</h2>
+      <h2><img src="camera-icon.svg" class="mission-icon" alt=""> 1. 「とっておきの1枚」を提出</h2>
       <p>
-        3日分すべての完了報告が必要です。<br>
-        専用フォームのURLはここに掲載します。（あとでリンクを追加）
+        毎日、その日のベストショットを1枚選んで提出してください。<br>
+        提出先：<a href="https://docs.google.com/forms/d/e/1FAIpQLSf62pWpaNALNyyPZhNl31732vBWCXS1M3UgKkkszP8zmLuW7w/viewform?usp=dialog" target="_blank" rel="noopener">提出フォーム</a>
       </p>
     </section>
+
+    <!-- 2. SNS投稿 -->
+    <section class="info-card">
+      <h2><img src="sns-icon.svg" class="mission-icon" alt=""> 2. SNS投稿</h2>
+      <p>毎日1回、旅の様子をSNSに投稿してください。</p>
+      <h3>ルール</h3>
+      <ul>
+        <li>1日1回以上の投稿</li>
+        <li>ストーリーなど消えるものはNG（フィード投稿のみ）</li>
+        <li>むやみに他人の顔を写さないでください</li>
+      </ul>
+    </section>
+
+    <!-- 指定ハッシュタグ -->
+    <section class="info-card">
+      <h2>指定ハッシュタグ（必須）</h2>
+      <div class="hashtag-box">
+        <p class="hashtag-list" id="hashtags">#sponsored #aizuwakamatsu #fukushima #japantrip #japanlife</p>
+        <button class="copy-btn" onclick="copyHashtags('hashtags', this)" aria-label="コピー">
+          <img src="copy-icon.svg" class="copy-icon" alt="">
+        </button>
+      </div>
+    </section>
+
+    <!-- 3. たびあとアンケート -->
+    <section class="info-card">
+      <h2><img src="survey-icon.svg" class="mission-icon" alt=""> 3. たびあとアンケート</h2>
+      <p>
+        帰りの新幹線の中でアンケートにご回答ください。<br>
+        <strong>期限：2026年1月17日（土）</strong><br>
+        回答先：<a href="https://forms.gle/667itDydZ7GrsCQW8" target="_blank" rel="noopener">アンケートフォーム</a>
+      </p>
+      <div class="callout-warning">
+        <strong>お支払い情報</strong><br>
+        報酬のお支払い先（銀行口座情報）もこちらでご登録いただきます。
+      </div>
+    </section>
+
+    <!-- 4. 完了報告 -->
+    <section class="info-card">
+      <h2><img src="report-icon.svg" class="mission-icon" alt=""> 4. 完了報告</h2>
+      <p>
+        YOLO DISCOVERの完了報告を提出してください。<br>
+        <strong>期限：2026年1月21日（水）</strong><br>
+        報告先：<a href="https://wom.yolo-japan.com/ja/mypage/active-projects/" target="_blank" rel="noopener">実施中プロジェクト一覧</a>
+      </p>
+      <div class="callout-warning">
+        <strong>ヒント</strong><br>
+        旅行中にSNS投稿した写真をまとめたり、再編集して投稿してもOKです。
+      </div>
+    </section>
+
+    <hr style="margin: 24px 0; border: none; border-top: 1px solid #e6ecf0;">
+
+    <h2 style="border-left-color: #f9c83d;">日別ToDo</h2>
+
+    <!-- Day 1 -->
+    <section class="day-card">
+      <h2>Day 1｜2026年1月15日（木）</h2>
+      <ul class="todo-list">
+        <li><img src="camera-icon.svg" class="todo-icon" alt=""> 「とっておきの1枚」を提出</li>
+        <li><img src="sns-icon.svg" class="todo-icon" alt=""> SNS投稿</li>
+      </ul>
+    </section>
+
+    <!-- Day 2 -->
+    <section class="day-card">
+      <h2>Day 2｜2026年1月16日（金）</h2>
+      <ul class="todo-list">
+        <li><img src="camera-icon.svg" class="todo-icon" alt=""> 「とっておきの1枚」を提出</li>
+        <li><img src="sns-icon.svg" class="todo-icon" alt=""> SNS投稿</li>
+      </ul>
+    </section>
+
+    <!-- Day 3 -->
+    <section class="day-card">
+      <h2>Day 3｜2026年1月17日（土）</h2>
+      <ul class="todo-list">
+        <li><img src="camera-icon.svg" class="todo-icon" alt=""> 「とっておきの1枚」を提出</li>
+        <li><img src="sns-icon.svg" class="todo-icon" alt=""> SNS投稿</li>
+        <li><img src="survey-icon.svg" class="todo-icon" alt=""> たびあとアンケート回答</li>
+      </ul>
+    </section>
+
+    <!-- 旅行後 -->
+    <section class="day-card">
+      <h2>旅行後</h2>
+      <ul class="todo-list">
+        <li><img src="report-icon.svg" class="todo-icon" alt=""> YOLO DISCOVER 完了報告</li>
+      </ul>
+      <div class="callout-warning">
+        <strong>期限：2026年1月21日（水）</strong>
+      </div>
+    </section>
+
+    <!-- 緊急連絡先 -->
+    <section class="emergency-contacts">
+      <h2>緊急連絡先</h2>
+
+      <div class="emergency-section">
+        <h3>交番・駐在所（会津若松市管轄）</h3>
+        <ul>
+          <li>駅前交番（会津若松駅）: <a href="tel:0242-22-1877"><img src="phone-icon.svg" class="phone-icon" alt="">0242-22-1877</a> <a href="https://www.google.com/maps/search/?api=1&query=会津若松駅前交番" target="_blank" rel="noopener"><img src="map-pin-icon.svg" class="map-icon" alt="">地図</a></li>
+          <li>城前交番（東山温泉）: <a href="tel:0242-27-0796"><img src="phone-icon.svg" class="phone-icon" alt="">0242-27-0796</a> <a href="https://www.google.com/maps/search/?api=1&query=城前交番+会津若松" target="_blank" rel="noopener"><img src="map-pin-icon.svg" class="map-icon" alt="">地図</a></li>
+          <li>大戸駐在所（芦ノ牧温泉）: <a href="tel:0242-92-2110"><img src="phone-icon.svg" class="phone-icon" alt="">0242-92-2110</a> <a href="https://www.google.com/maps/search/?api=1&query=大戸駐在所+会津若松" target="_blank" rel="noopener"><img src="map-pin-icon.svg" class="map-icon" alt="">地図</a></li>
+        </ul>
+      </div>
+
+      <div class="emergency-section">
+        <h3>病院</h3>
+        <ul>
+          <li>会津中央病院: <a href="tel:0242-25-1515"><img src="phone-icon.svg" class="phone-icon" alt="">0242-25-1515</a> <a href="https://www.google.com/maps/search/?api=1&query=会津中央病院" target="_blank" rel="noopener"><img src="map-pin-icon.svg" class="map-icon" alt="">地図</a></li>
+          <li>会津医療センター: <a href="tel:0242-75-2100"><img src="phone-icon.svg" class="phone-icon" alt="">0242-75-2100</a> <a href="https://www.google.com/maps/search/?api=1&query=福島県立医科大学会津医療センター" target="_blank" rel="noopener"><img src="map-pin-icon.svg" class="map-icon" alt="">地図</a></li>
+          <li>夜間急病センター: <a href="tel:0242-28-1199"><img src="phone-icon.svg" class="phone-icon" alt="">0242-28-1199</a> <a href="https://www.google.com/maps/search/?api=1&query=会津若松市夜間急病センター" target="_blank" rel="noopener"><img src="map-pin-icon.svg" class="map-icon" alt="">地図</a></li>
+        </ul>
+      </div>
+
+      <div class="emergency-section">
+        <h3>担当者連絡先</h3>
+        <ul>
+          <li>YOLO JAPAN 鎌田（Kamada）: <a href="tel:080-3099-4493"><img src="phone-icon.svg" class="phone-icon" alt="">080-3099-4493</a></li>
+        </ul>
+      </div>
+    </section>
+
   </main>
 
   <script src="script.js"></script>

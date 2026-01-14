@@ -6,10 +6,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body data-page="index">
   <!-- 共通ヘッダー -->
   <header class="site-header">
     <div class="site-title">Aizu Premium Tour</div>
+    <select id="langSelect" class="lang-select" aria-label="Select language">
+      <option value="ja">日本語</option>
+      <option value="en">English</option>
+      <option value="zh">中文</option>
+    </select>
     <button class="menu-toggle" aria-label="Open menu">
       ☰
     </button>
@@ -23,68 +28,551 @@
       <li><a href="streetwalk.html">Street Walk Map（街ブラ）</a></li>
       <li><a href="missions.html">Daily Missions（ToDo）</a></li>
     </ul>
-    <hr>
-    <div class="menu-section-title">Language</div>
-    <ul>
-      <li><button class="lang-btn" data-lang="ja">日本語</button></li>
-      <li><button class="lang-btn" data-lang="en">English</button></li>
-      <li><button class="lang-btn" data-lang="zh">中文</button></li>
-    </ul>
-    <hr>
-    <div class="menu-section-title">Report</div>
-    <p class="menu-note">
-      完了報告は YOLO DISCOVER と別の専用フォームから行ってください。<br>
-      （リンクは後で追加）
-    </p>
   </nav>
 
   <main class="page">
-    <h1>行程表｜2026年1月15日（金）〜1月17日（日）</h1>
+    <h1>行程表｜2026年1月15日（木）〜1月17日（土）</h1>
     <p>
       このページでは、3日間のスケジュールを確認できます。<br>
-      鶴ヶ城の訪問はツアーに含まれている<strong>必須の行き先</strong>です。
+      会津若松市のシンボル<strong>鶴ヶ城</strong>を行程内で訪れます。
     </p>
 
     <!-- Day 1 -->
     <section class="day-card">
-      <h2>Day 1｜2026年1月15日（金）</h2>
-      <ul>
-        <li>9:40　東京駅を出発（新幹線）</li>
-        <li>10:51　郡山駅に到着</li>
-        <li>11:36　会津若松駅に到着</li>
-        <li>12:00　市内施設に到着</li>
-        <li>
-          自由時間：<a href="streetwalk.html">街ブラマップを見る</a>
-        </li>
-        <li>17:31　会津若松駅を出発</li>
-        <li>17:45　芦ノ牧温泉駅に到着 → 宿へ移動</li>
-      </ul>
+      <h2>Day 1｜2026年1月15日（木）</h2>
+      <div class="journey-timeline">
+        <!-- 集合：ドトール -->
+        <div class="journey-row">
+          <span class="journey-label">集合</span>
+          <span class="journey-time">9:00</span>
+          <div class="journey-point">
+            <img src="walking.png" alt="集合">
+          </div>
+          <span class="journey-location"><strong><a href="https://www.google.com/maps/place/%E3%83%89%E3%83%88%E3%83%BC%E3%83%AB%E3%82%B3%E3%83%BC%E3%83%92%E3%83%BC%E3%82%B7%E3%83%A7%E3%83%83%E3%83%97+%E6%9D%B1%E4%BA%AC%E9%A7%85%E5%85%AB%E9%87%8D%E6%B4%B2%E4%B8%AD%E5%A4%AE%E5%8F%A3%E5%BA%97/@35.6806406,139.7653838,17z/data=!3m2!4b1!5s0x60188bfbd91993eb:0xc9da05c5e162fa6a!4m6!3m5!1s0x60188bfc7666ea89:0xe5b371a1bbafcc50!8m2!3d35.6806406!4d139.7679587!16s%2Fg%2F1vhq3pxw?entry=ttu&g_ep=EgoyMDI1MTIwOS4wIKXMDSoKLDEwMDc5MjA2N0gBUAM%3D" target="_blank" rel="noopener">ドトールコーヒーショップ 東京駅八重洲中央口店</a></strong></span>
+        </div>
+        <!-- 集合情報 -->
+        <div class="journey-free">
+          <span></span>
+          <span></span>
+          <div class="journey-line-wrapper"><div class="journey-line"></div></div>
+          <div class="journey-free-content">
+            <p class="journey-free-note">YOLOスタッフ：鎌田 真有（かまだ まゆ）</p>
+            <p class="journey-free-note">目印マーク：</p>
+            <img src="staff-marker.png" alt="目印" style="max-width: 120px; margin-top: 4px;">
+          </div>
+        </div>
+        <!-- 出発：東京駅 -->
+        <div class="journey-row">
+          <span class="journey-label">出発</span>
+          <span class="journey-time">9:40</span>
+          <div class="journey-point">
+            <img src="station-icon.svg" alt="駅">
+          </div>
+          <span class="journey-location"><strong>東京駅</strong></span>
+        </div>
+        <!-- 新幹線 -->
+        <div class="journey-connector">
+          <span></span>
+          <span></span>
+          <div class="journey-line-wrapper"><div class="journey-line"></div></div>
+          <div class="journey-transport">
+            <img src="shinkansen.png" alt="新幹線">
+            <span>JR新幹線やまびこ55号</span>
+          </div>
+        </div>
+        <!-- 到着・出発：郡山駅 -->
+        <div class="journey-row-combined">
+          <div class="journey-combined-labels">
+            <span class="journey-label">到着</span>
+            <span class="journey-label">出発</span>
+          </div>
+          <div class="journey-combined-times">
+            <span class="journey-time">10:58</span>
+            <span class="journey-time">11:15</span>
+          </div>
+          <div class="journey-combined-point">
+            <span class="journey-dot"></span>
+          </div>
+          <span class="journey-combined-location"><strong>郡山駅</strong>（福島県）</span>
+        </div>
+        <!-- 電車 -->
+        <div class="journey-connector">
+          <span></span>
+          <span></span>
+          <div class="journey-line-wrapper"><div class="journey-line"></div></div>
+          <div class="journey-transport">
+            <img src="train.png" alt="電車">
+            <span>JR磐越西線・会津若松行</span>
+          </div>
+        </div>
+        <!-- 到着：会津若松駅 -->
+        <div class="journey-row">
+          <span class="journey-label">到着</span>
+          <span class="journey-time">12:31</span>
+          <div class="journey-point">
+            <img src="station-icon.svg" alt="駅">
+          </div>
+          <span class="journey-location"><strong>会津若松駅</strong></span>
+        </div>
+        <!-- 自由行動 -->
+        <div class="journey-free">
+          <span></span>
+          <span></span>
+          <div class="journey-line-wrapper"><div class="journey-line"></div></div>
+          <div class="journey-free-content">
+            <div class="journey-free-title">自由行動</div>
+            <p class="journey-free-note">ぐるっとカードで自由散策（ランチ・カフェなど）</p>
+            <p class="journey-free-note"><a href="https://www.google.com/maps/place/%E9%B6%B4%E3%83%B6%E5%9F%8E/@37.4878198,139.9296657,17z/data=!3m1!4b1!4m6!3m5!1s0x5ff554974e2fffbb:0x677cc0bc9a812e8b!8m2!3d37.4878198!4d139.9296657!16zL20vMDMwamY4?entry=ttu&g_ep=EgoyMDI1MTIwOS4wIKXMDSoKLDEwMDc5MjA2N0gBUAM%3D" target="_blank" rel="noopener">鶴ヶ城</a>への訪問（1日目、2日目のどちらかだけでOK）</p>
+          </div>
+        </div>
+        <!-- 超重要ボックス -->
+        <div class="journey-free">
+          <span></span>
+          <span></span>
+          <div class="journey-line-wrapper"><div class="journey-line"></div></div>
+          <div class="journey-free-content" style="background: #ffebee; border-color: #d32f2f;">
+            <div class="journey-free-title" style="color: #d32f2f;">※超重要</div>
+            <p class="journey-free-note" style="color: #d32f2f;"><strong>まちなか周遊バス「ハイカラさん」に乗ってきてください</strong></p>
+            <p class="journey-free-note" style="color: #d32f2f;"><strong>17:33に到着するハイカラさんに乗ってください</strong></p>
+            <p class="journey-free-note"><a href="https://www.google.com/maps/dir//%E4%BC%9A%E6%B4%A5%E6%AD%A6%E5%AE%B6%E5%B1%8B%E6%95%B7%E5%89%8D/@37.4917,139.9576,17z?entry=ttu" target="_blank" rel="noopener">乗り換えマップ</a></p>
+          </div>
+        </div>
+        <!-- 到着：会津武家屋敷前 -->
+        <div class="journey-row">
+          <span class="journey-label" style="color: #d32f2f;">到着</span>
+          <span class="journey-time" style="color: #d32f2f;">17:33</span>
+          <div class="journey-point">
+            <img src="bus-stop-icon.svg" alt="バス停">
+          </div>
+          <span class="journey-location" style="color: #d32f2f;"><strong>会津武家屋敷前</strong></span>
+        </div>
+        <!-- バス移動 -->
+        <div class="journey-connector">
+          <span></span>
+          <span></span>
+          <div class="journey-line-wrapper"><div class="journey-line"></div></div>
+          <div class="journey-transport">
+            <img src="bus.png" alt="バス">
+            <span>無料シャトルバス</span>
+          </div>
+        </div>
+        <!-- 到着・出発：東山温泉 東鳳 -->
+        <div class="journey-row-combined">
+          <div class="journey-combined-labels">
+            <span class="journey-label">到着</span>
+            <span class="journey-label">出発</span>
+          </div>
+          <div class="journey-combined-times">
+            <span class="journey-time">17:45</span>
+            <span class="journey-time">18:00</span>
+          </div>
+          <div class="journey-combined-point">
+            <img src="ryokan.png" alt="温泉宿">
+          </div>
+          <span class="journey-combined-location"><strong>東山温泉 東鳳</strong></span>
+        </div>
+        <!-- はしご酒 -->
+        <div class="journey-free">
+          <span></span>
+          <span></span>
+          <div class="journey-line-wrapper"><div class="journey-line"></div></div>
+          <div class="journey-free-content">
+            <div class="journey-free-title">はしご酒</div>
+            <p class="journey-free-note">一軒目はYOLOスタッフの案内からスタート😋</p>
+            <p class="journey-free-note">夕食<br>現地解散</p>
+          </div>
+        </div>
+        <!-- 東山温泉 東鳳へ戻る -->
+        <div class="journey-row">
+          <span class="journey-label"></span>
+          <span class="journey-time"></span>
+          <div class="journey-point">
+            <img src="ryokan.png" alt="温泉宿">
+          </div>
+          <span class="journey-location"><strong>東山温泉 東鳳</strong>へ戻る</span>
+        </div>
+      </div>
     </section>
 
     <!-- Day 2 -->
     <section class="day-card">
-      <h2>Day 2｜2026年1月16日（土）</h2>
-      <ul>
-        <li>午前　「ぐるっとカード」で会津市内を周遊</li>
-        <li>鶴ヶ城を訪問（ツアーの必須スポット）</li>
-        <li>
-          自由時間：<a href="streetwalk.html">街ブラマップを見る</a>
-        </li>
-        <li>夕方　宿へ戻る</li>
-      </ul>
+      <h2>Day 2｜2026年1月16日（金）</h2>
+      <div class="journey-timeline">
+        <!-- 集合：東山温泉 1Fロビー -->
+        <div class="journey-row">
+          <span class="journey-label">集合</span>
+          <span class="journey-time">10:00</span>
+          <div class="journey-point">
+            <img src="ryokan.png" alt="温泉宿">
+          </div>
+          <span class="journey-location"><strong>東山温泉 1Fロビー</strong></span>
+        </div>
+        <!-- 当日の説明 -->
+        <div class="journey-info">
+          <span></span>
+          <span></span>
+          <div class="journey-line-wrapper"><div class="journey-line"></div></div>
+          <div class="journey-info-text">当日の説明</div>
+        </div>
+        <!-- 出発：東山温泉 -->
+        <div class="journey-row">
+          <span class="journey-label">出発</span>
+          <span class="journey-time">10:30</span>
+          <div class="journey-point">
+            <img src="ryokan.png" alt="温泉宿">
+          </div>
+          <span class="journey-location"><strong>東山温泉</strong></span>
+        </div>
+        <!-- 自由行動の詳細 -->
+        <div class="journey-free">
+          <span></span>
+          <span></span>
+          <div class="journey-line-wrapper"><div class="journey-line"></div></div>
+          <div class="journey-free-content">
+            <div class="journey-free-title">自由行動</div>
+            <p class="journey-free-note"><a href="https://www.google.com/maps/place/%E9%B6%B4%E3%83%B6%E5%9F%8E/@37.4878198,139.9296657,17z/data=!3m1!4b1!4m6!3m5!1s0x5ff554974e2fffbb:0x677cc0bc9a812e8b!8m2!3d37.4878198!4d139.9296657!16zL20vMDMwamY4?entry=ttu&g_ep=EgoyMDI1MTIwOS4wIKXMDSoKLDEwMDc5MjA2N0gBUAM%3D" target="_blank" rel="noopener">鶴ヶ城</a>への訪問（1日目、2日目のどちらかだけでOK）</p>
+            <p class="journey-free-note"><a href="streetwalk.html">街ブラページ</a>を見て会津を散策</p>
+          </div>
+        </div>
+        <!-- 超重要ボックス -->
+        <div class="journey-free">
+          <span></span>
+          <span></span>
+          <div class="journey-line-wrapper"><div class="journey-line"></div></div>
+          <div class="journey-free-content" style="background: #ffebee; border-color: #d32f2f;">
+            <div class="journey-free-title" style="color: #d32f2f;">※超重要</div>
+            <p class="journey-free-note" style="color: #d32f2f;"><strong>16:45に芦ノ牧温泉駅に到着する電車に乗ってください</strong></p>
+            <p class="journey-free-note" style="color: #d32f2f;">（前後の電車は30分〜1時間間隔）</p>
+            <p class="journey-free-note"><a href="https://www.google.com/maps/dir//%E8%8A%A6%E3%83%8E%E7%89%A7%E6%B8%A9%E6%B3%89%E9%A7%85/@37.4147,139.868,17z?entry=ttu" target="_blank" rel="noopener">乗り換えマップ</a></p>
+          </div>
+        </div>
+        <!-- 到着：芦ノ牧温泉駅 -->
+        <div class="journey-row">
+          <span class="journey-label" style="color: #d32f2f;">到着</span>
+          <span class="journey-time" style="color: #d32f2f;">16:45</span>
+          <div class="journey-point">
+            <img src="station-icon.svg" alt="駅">
+          </div>
+          <span class="journey-location" style="color: #d32f2f;"><strong>芦ノ牧温泉駅</strong></span>
+        </div>
+        <!-- バス移動 -->
+        <div class="journey-connector">
+          <span></span>
+          <span></span>
+          <div class="journey-line-wrapper"><div class="journey-line"></div></div>
+          <div class="journey-transport">
+            <img src="bus.png" alt="バス">
+            <span>無料シャトルバス</span>
+          </div>
+        </div>
+        <!-- 到着：大川荘 -->
+        <div class="journey-row">
+          <span class="journey-label">到着</span>
+          <span class="journey-time">17:00</span>
+          <div class="journey-point">
+            <img src="ryokan.png" alt="温泉宿">
+          </div>
+          <span class="journey-location"><strong>大川荘</strong></span>
+        </div>
+        <!-- 夕食 -->
+        <div class="journey-row">
+          <span class="journey-label">夕食</span>
+          <span class="journey-time">18:00</span>
+          <div class="journey-point">
+            <img src="meal-icon.png" alt="夕食">
+          </div>
+          <span class="journey-location"><strong>夕食</strong></span>
+        </div>
+        <div class="journey-free">
+          <span></span>
+          <span></span>
+          <div class="journey-line-wrapper"><div class="journey-line"></div></div>
+          <div class="journey-free-content">
+            <p class="journey-free-note">現地スタッフとYOLOスタッフと会食</p>
+            <p class="journey-free-note">インタビューあり✨</p>
+          </div>
+        </div>
+      </div>
     </section>
 
     <!-- Day 3 -->
     <section class="day-card">
-      <h2>Day 3｜2026年1月17日（日）</h2>
-      <ul>
-        <li>朝　芦ノ牧温泉スノーパークへ（雪体験）</li>
-        <li>昼　塔のへつり観光</li>
-        <li>午後　会津若松 → 郡山 → 東京へ移動</li>
-        <li>
-          自由時間：<a href="streetwalk.html">街ブラマップを見る</a>
-        </li>
-      </ul>
+      <h2>Day 3｜2026年1月17日（土）</h2>
+      <div class="journey-timeline">
+        <!-- 出発：大川荘 -->
+        <div class="journey-row">
+          <span class="journey-label">出発</span>
+          <span class="journey-time">9:45</span>
+          <div class="journey-point">
+            <img src="ryokan.png" alt="温泉宿">
+          </div>
+          <span class="journey-location"><strong>大川荘</strong></span>
+        </div>
+        <!-- バス（無料） -->
+        <div class="journey-connector">
+          <span></span>
+          <span></span>
+          <div class="journey-line-wrapper"><div class="journey-line"></div></div>
+          <div class="journey-transport">
+            <img src="bus.png" alt="バス">
+            <span>無料シャトルバス</span>
+          </div>
+        </div>
+        <!-- 到着：芦ノ牧温泉スノーパーク -->
+        <div class="journey-row">
+          <span class="journey-label">到着</span>
+          <span class="journey-time">10:00</span>
+          <div class="journey-point">
+            <img src="snowman.png" alt="雪">
+          </div>
+          <span class="journey-location"><strong>芦ノ牧温泉スノーパーク</strong></span>
+        </div>
+        <!-- 雪遊び体験 -->
+        <div class="journey-free">
+          <span></span>
+          <span></span>
+          <div class="journey-line-wrapper"><div class="journey-line"></div></div>
+          <div class="journey-free-content">
+            <div class="journey-free-title">雪遊び体験</div>
+            <p class="journey-free-note">朝一の雪を楽しむ❄️</p>
+            <p class="journey-free-note">入場料1000円＋ウェアレンタル代600円が現金で必要です。</p>
+            <p class="journey-free-note"><strong>★体験料金（5枚綴りの200円券を1000円で購入後ご利用いただけます）</strong></p>
+            <p class="journey-free-note">・スノーチューブ・そり …無料貸し出し（数に限りがあります）</p>
+            <p class="journey-free-note">・バナナボート・スノーチューブ …2周600円</p>
+            <p class="journey-free-note">・小型スノーモービルレンタル …10分間1200円、20分間2200円</p>
+            <p class="journey-free-note">・かまくら …1基30分1600円 人数分のお餅が付きます</p>
+          </div>
+        </div>
+        <!-- 出発：芦ノ牧温泉スノーパーク -->
+        <div class="journey-row">
+          <span class="journey-label">出発</span>
+          <span class="journey-time">11:30</span>
+          <div class="journey-point">
+            <img src="snowman.png" alt="雪">
+          </div>
+          <span class="journey-location"><strong>芦ノ牧温泉スノーパーク</strong></span>
+        </div>
+        <!-- バス（無料） -->
+        <div class="journey-connector">
+          <span></span>
+          <span></span>
+          <div class="journey-line-wrapper"><div class="journey-line"></div></div>
+          <div class="journey-transport">
+            <img src="bus.png" alt="バス">
+            <span>無料シャトルバス</span>
+          </div>
+        </div>
+        <!-- 到着・出発：芦ノ牧温泉駅 -->
+        <div class="journey-row-combined">
+          <div class="journey-combined-labels">
+            <span class="journey-label">到着</span>
+            <span class="journey-label">出発</span>
+          </div>
+          <div class="journey-combined-times">
+            <span class="journey-time">11:40</span>
+            <span class="journey-time">11:50</span>
+          </div>
+          <div class="journey-combined-point">
+            <span class="journey-dot"></span>
+          </div>
+          <span class="journey-combined-location"><strong>芦ノ牧温泉駅</strong></span>
+        </div>
+        <!-- 電車 -->
+        <div class="journey-connector">
+          <span></span>
+          <span></span>
+          <div class="journey-line-wrapper"><div class="journey-line"></div></div>
+          <div class="journey-transport">
+            <img src="train.png" alt="電車">
+            <span>電車</span>
+          </div>
+        </div>
+        <!-- 到着・出発：湯野上温泉駅 -->
+        <div class="journey-row-combined">
+          <div class="journey-combined-labels">
+            <span class="journey-label">到着</span>
+            <span class="journey-label">出発</span>
+          </div>
+          <div class="journey-combined-times">
+            <span class="journey-time">12:05</span>
+            <span class="journey-time">12:15</span>
+          </div>
+          <div class="journey-combined-point">
+            <span class="journey-dot"></span>
+          </div>
+          <span class="journey-combined-location"><strong>湯野上温泉駅</strong></span>
+        </div>
+        <!-- バス（猿遊号：有料） -->
+        <div class="journey-connector">
+          <span></span>
+          <span></span>
+          <div class="journey-line-wrapper"><div class="journey-line"></div></div>
+          <div class="journey-transport">
+            <img src="bus.png" alt="バス">
+            <span>猿遊号</span>
+          </div>
+        </div>
+        <!-- 到着：大内宿入口 -->
+        <div class="journey-row">
+          <span class="journey-label">到着</span>
+          <span class="journey-time">12:35</span>
+          <div class="journey-point">
+            <img src="village-icon.svg" alt="村">
+          </div>
+          <span class="journey-location"><strong>大内宿入口</strong></span>
+        </div>
+        <!-- 自由行動（大内宿内） -->
+        <div class="journey-free">
+          <span></span>
+          <span></span>
+          <div class="journey-line-wrapper"><div class="journey-line"></div></div>
+          <div class="journey-free-content">
+            <div class="journey-free-title">自由行動（大内宿内）</div>
+            <p class="journey-free-note">昼食＆お土産<br>※お土産購入はここで済ませる</p>
+          </div>
+        </div>
+        <!-- 出発：大内宿 -->
+        <div class="journey-row">
+          <span class="journey-label">出発</span>
+          <span class="journey-time">13:55</span>
+          <div class="journey-point">
+            <img src="ryokan.png" alt="温泉宿">
+          </div>
+          <span class="journey-location"><strong>大内宿</strong></span>
+        </div>
+        <!-- バス（猿遊号：有料） -->
+        <div class="journey-connector">
+          <span></span>
+          <span></span>
+          <div class="journey-line-wrapper"><div class="journey-line"></div></div>
+          <div class="journey-transport">
+            <img src="bus.png" alt="バス">
+            <span>猿遊号</span>
+          </div>
+        </div>
+        <!-- 到着：湯野上温泉駅 -->
+        <div class="journey-row">
+          <span class="journey-label">到着</span>
+          <span class="journey-time">14:15</span>
+          <div class="journey-point">
+            <span class="journey-dot"></span>
+          </div>
+          <span class="journey-location"><strong>湯野上温泉駅</strong></span>
+        </div>
+        <!-- 出発：湯野上温泉駅 -->
+        <div class="journey-row">
+          <span class="journey-label">出発</span>
+          <span class="journey-time">14:52</span>
+          <div class="journey-point">
+            <span class="journey-dot"></span>
+          </div>
+          <span class="journey-location"><strong>湯野上温泉駅</strong></span>
+        </div>
+        <!-- 電車 -->
+        <div class="journey-connector">
+          <span></span>
+          <span></span>
+          <div class="journey-line-wrapper"><div class="journey-line"></div></div>
+          <div class="journey-transport">
+            <img src="train.png" alt="電車">
+            <span>会津鉄道快速リレー119号 <span style="color: #d32f2f;">別途190円</span></span>
+          </div>
+        </div>
+        <!-- 到着・出発：会津若松駅 -->
+        <div class="journey-row-combined">
+          <div class="journey-combined-labels">
+            <span class="journey-label">到着</span>
+            <span class="journey-label">出発</span>
+          </div>
+          <div class="journey-combined-times">
+            <span class="journey-time">15:26</span>
+            <span class="journey-time">16:20</span>
+          </div>
+          <div class="journey-combined-point">
+            <img src="station-icon.svg" alt="駅">
+          </div>
+          <span class="journey-combined-location"><strong>会津若松駅</strong></span>
+        </div>
+        <!-- 高速バス -->
+        <div class="journey-connector">
+          <span></span>
+          <span></span>
+          <div class="journey-line-wrapper"><div class="journey-line"></div></div>
+          <div class="journey-transport">
+            <img src="bus.png" alt="バス">
+            <span>高速バス・会津バス・郡山－会津若松線・郡山駅前行</span>
+          </div>
+        </div>
+        <!-- 到着・出発：郡山駅前 -->
+        <div class="journey-row-combined">
+          <div class="journey-combined-labels">
+            <span class="journey-label">到着</span>
+            <span class="journey-label">出発</span>
+          </div>
+          <div class="journey-combined-times">
+            <span class="journey-time">17:40</span>
+            <span class="journey-time">17:41</span>
+          </div>
+          <div class="journey-combined-point">
+            <span class="journey-dot"></span>
+          </div>
+          <span class="journey-combined-location"><strong>郡山駅前</strong></span>
+        </div>
+        <!-- 徒歩 -->
+        <div class="journey-connector">
+          <span></span>
+          <span></span>
+          <div class="journey-line-wrapper"><div class="journey-line"></div></div>
+          <div class="journey-transport">
+            <img src="walking.png" alt="徒歩">
+            <span>徒歩</span>
+          </div>
+        </div>
+        <!-- 到着・出発：郡山駅 -->
+        <div class="journey-row-combined">
+          <div class="journey-combined-labels">
+            <span class="journey-label">到着</span>
+            <span class="journey-label">出発</span>
+          </div>
+          <div class="journey-combined-times">
+            <span class="journey-time">17:44</span>
+            <span class="journey-time">18:06</span>
+          </div>
+          <div class="journey-combined-point">
+            <img src="station-icon.svg" alt="駅">
+          </div>
+          <span class="journey-combined-location"><strong>郡山駅</strong></span>
+        </div>
+        <!-- 新幹線 -->
+        <div class="journey-connector">
+          <span></span>
+          <span></span>
+          <div class="journey-line-wrapper"><div class="journey-line"></div></div>
+          <div class="journey-transport">
+            <img src="shinkansen.png" alt="新幹線">
+            <span>JR新幹線やまびこ152号</span>
+          </div>
+        </div>
+        <!-- たびあとアンケート -->
+        <div class="journey-free">
+          <span></span>
+          <span></span>
+          <div class="journey-line-wrapper"><div class="journey-line"></div></div>
+          <div class="journey-free-content">
+            <div class="journey-free-title" style="color: #d32f2f;">たびあとアンケートを記入</div>
+            <p class="journey-free-note"><a href="missions.html">ToDo参照</a></p>
+          </div>
+        </div>
+        <!-- 到着：東京駅 -->
+        <div class="journey-row">
+          <span class="journey-label">到着</span>
+          <span class="journey-time">19:28</span>
+          <div class="journey-point">
+            <img src="station-icon.svg" alt="駅">
+          </div>
+          <span class="journey-location"><strong>東京駅</strong>　解散</span>
+        </div>
+      </div>
     </section>
 
     <section class="info-card">
@@ -93,13 +581,42 @@
         毎日つぎの2つを必ず行ってください：
       </p>
       <ul>
-        <li>SNSに写真を投稿する（1日1回）</li>
-        <li>完了報告を書く（訪れた場所の写真＋感想）</li>
+        <li>「とっておきの1枚」を提出</li>
+        <li>SNSに投稿する（1日1回）</li>
       </ul>
       <p>
-        詳しくは <a href="missions.html">Daily Missions（ToDo）ページ</a> を確認してください。<br>
-        完了報告は YOLO DISCOVER とは別の専用フォームで行います。
+        詳しくは <a href="missions.html">Daily Missions（ToDo）ページ</a> を確認してください。
       </p>
+    </section>
+
+    <!-- 緊急連絡先 -->
+    <section class="emergency-contacts">
+      <h2>緊急連絡先</h2>
+
+      <div class="emergency-section">
+        <h3>交番・駐在所（会津若松市管轄）</h3>
+        <ul>
+          <li>駅前交番（会津若松駅）: <a href="tel:0242-22-1877"><img src="phone-icon.svg" class="phone-icon" alt="">0242-22-1877</a> <a href="https://www.google.com/maps/search/?api=1&query=会津若松駅前交番" target="_blank" rel="noopener"><img src="map-pin-icon.svg" class="map-icon" alt="">地図</a></li>
+          <li>城前交番（東山温泉）: <a href="tel:0242-27-0796"><img src="phone-icon.svg" class="phone-icon" alt="">0242-27-0796</a> <a href="https://www.google.com/maps/search/?api=1&query=城前交番+会津若松" target="_blank" rel="noopener"><img src="map-pin-icon.svg" class="map-icon" alt="">地図</a></li>
+          <li>大戸駐在所（芦ノ牧温泉）: <a href="tel:0242-92-2110"><img src="phone-icon.svg" class="phone-icon" alt="">0242-92-2110</a> <a href="https://www.google.com/maps/search/?api=1&query=大戸駐在所+会津若松" target="_blank" rel="noopener"><img src="map-pin-icon.svg" class="map-icon" alt="">地図</a></li>
+        </ul>
+      </div>
+
+      <div class="emergency-section">
+        <h3>病院</h3>
+        <ul>
+          <li>会津中央病院: <a href="tel:0242-25-1515"><img src="phone-icon.svg" class="phone-icon" alt="">0242-25-1515</a> <a href="https://www.google.com/maps/search/?api=1&query=会津中央病院" target="_blank" rel="noopener"><img src="map-pin-icon.svg" class="map-icon" alt="">地図</a></li>
+          <li>会津医療センター: <a href="tel:0242-75-2100"><img src="phone-icon.svg" class="phone-icon" alt="">0242-75-2100</a> <a href="https://www.google.com/maps/search/?api=1&query=福島県立医科大学会津医療センター" target="_blank" rel="noopener"><img src="map-pin-icon.svg" class="map-icon" alt="">地図</a></li>
+          <li>夜間急病センター: <a href="tel:0242-28-1199"><img src="phone-icon.svg" class="phone-icon" alt="">0242-28-1199</a> <a href="https://www.google.com/maps/search/?api=1&query=会津若松市夜間急病センター" target="_blank" rel="noopener"><img src="map-pin-icon.svg" class="map-icon" alt="">地図</a></li>
+        </ul>
+      </div>
+
+      <div class="emergency-section">
+        <h3>担当者連絡先</h3>
+        <ul>
+          <li>YOLO JAPAN 鎌田（Kamada）: <a href="tel:080-3099-4493"><img src="phone-icon.svg" class="phone-icon" alt="">080-3099-4493</a></li>
+        </ul>
+      </div>
     </section>
   </main>
 
